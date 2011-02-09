@@ -5,8 +5,12 @@
 
     <groupId>com.tomasmalmsten</groupId>
     <artifactId>blog-examples</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <version>0.1.0-SNAPSHOT</version>
+    <modules>
+
+        <module>design-pattern-examples</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>blog-examples</name>
     <url>http://maven.apache.org</url>

@@ -1,4 +1,4 @@
-package com.tomasmalmsten.examples.strategy;
+package strategy;
 
 public interface Strategy {
     void execute();
