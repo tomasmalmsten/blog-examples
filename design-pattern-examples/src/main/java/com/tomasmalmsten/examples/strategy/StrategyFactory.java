@@ -1,4 +1,4 @@
-package strategy;
+package com.tomasmalmsten.examples.strategy;
 
 import java.util.HashMap;
 import java.util.Map;

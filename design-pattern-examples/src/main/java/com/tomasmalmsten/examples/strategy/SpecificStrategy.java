@@ -1,4 +1,4 @@
-package strategy;
+package com.tomasmalmsten.examples.strategy;
 
 public class SpecificStrategy implements Strategy {
 
