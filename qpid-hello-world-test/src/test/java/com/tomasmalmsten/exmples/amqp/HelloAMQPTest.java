@@ -24,7 +24,7 @@ public class HelloAMQPTest {
 
 
     @Before
-    public void setUp() throws IOException {
+    public void setUpConnectionAndChannelAndExchange() throws IOException {
         ConnectionFactory factory = new ConnectionFactory();
         connection = factory.newConnection();
         channel = connection.createChannel();
@@ -34,17 +34,17 @@ public class HelloAMQPTest {
 
     @Test
     public void receiveSentMessage() throws InterruptedException, IOException {
-        givenHelloWorldMessageHasBeenSent();
-        whenTheMessageIsRetrivedFromTheMQ();
+        givenMessageIsSentTrhoughConfiguredChannel();
+        whenTheMessageIsRetrivedFromTheChannel();
         thenTheReceivedMessageShouldMatchTheSentMessage();
     }
 
-    private void givenHelloWorldMessageHasBeenSent() throws IOException {
+    private void givenMessageIsSentTrhoughConfiguredChannel() throws IOException {
         channel.queueBind(queueName, EXCHANGE_NAME, ROUTING_KEY);
         channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, null, MESSAGE.getBytes());
     }
 
-    private void whenTheMessageIsRetrivedFromTheMQ() throws IOException, InterruptedException {
+    private void whenTheMessageIsRetrivedFromTheChannel() throws IOException, InterruptedException {
         QueueingConsumer consumer = new QueueingConsumer(channel);
         channel.basicConsume(queueName, AUTO_ACK, consumer);
         QueueingConsumer.Delivery delivery = consumer.nextDelivery();
@@ -57,7 +57,7 @@ public class HelloAMQPTest {
     }
 
     @After
-    public void cleanUp() throws IOException {
+    public void closeChannelAndConnection() throws IOException {
         channel.close();
         connection.close();
     }
