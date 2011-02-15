@@ -17,6 +17,8 @@ public class HelloAMQPTest {
     private static final String ROUTING_KEY = "routingkey";
     private static final String MESSAGE = "Hello World";
     private static final boolean AUTO_ACK = false;
+    private static final String TYPE = "direct";
+    private static final boolean DURABILITY = true;
     private Channel channel;
     private Connection connection;
     private String queueName;
@@ -28,8 +30,9 @@ public class HelloAMQPTest {
         ConnectionFactory factory = new ConnectionFactory();
         connection = factory.newConnection();
         channel = connection.createChannel();
-        channel.exchangeDeclare(EXCHANGE_NAME, "direct", true);
+        channel.exchangeDeclare(EXCHANGE_NAME, TYPE, DURABILITY);
         queueName = channel.queueDeclare().getQueue();
+        channel.queueBind(queueName, EXCHANGE_NAME, ROUTING_KEY);
     }
 
     @Test
@@ -40,7 +43,6 @@ public class HelloAMQPTest {
     }
 
     private void givenMessageIsSentTrhoughConfiguredChannel() throws IOException {
-        channel.queueBind(queueName, EXCHANGE_NAME, ROUTING_KEY);
         channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, null, MESSAGE.getBytes());
     }
 
