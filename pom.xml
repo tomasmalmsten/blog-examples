@@ -11,6 +11,7 @@
         <module>design-pattern-examples</module>
         <module>camel-router</module>
         <module>qpid-hello-world-test</module>
+      <module>untitled</module>
     </modules>
     <packaging>pom</packaging>
 
