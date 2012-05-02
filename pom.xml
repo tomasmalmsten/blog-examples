@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tomasmalmsten</groupId>
     <artifactId>blog-examples</artifactId>
-    <version>SNAPSHOT</version>
+    <version>1-SNAPSHOT</version>
     <name>Example code from Tomas Malmsten's blog</name>
     <url>http://www.tomasmalmsten.com</url>
     <modules>
@@ -27,8 +27,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>7</source>
+                    <target>7</target>
                 </configuration>
             </plugin>
         </plugins>
