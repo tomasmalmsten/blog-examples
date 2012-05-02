@@ -1,36 +1,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.tomasmalmsten</groupId>
-    <artifactId>blog-examples</artifactId>
-    <version>1-SNAPSHOT</version>
-    <name>Example code from Tomas Malmsten's blog</name>
-    <url>http://www.tomasmalmsten.com</url>
-    <modules>
-        <module>design-pattern-examples</module>
-        <module>camel-router</module>
-        <module>qpid-hello-world-test</module>
-      <module>xml-to-map-using-jaxb</module>
-    </modules>
-    <packaging>pom</packaging>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.tomasmalmsten</groupId>
+  <artifactId>blog-examples</artifactId>
+  <version>1-SNAPSHOT</version>
+  <name>Example code from Tomas Malmsten's blog</name>
+  <url>http://www.tomasmalmsten.com</url>
+  <modules>
+    <module>design-pattern-examples</module>
+    <module>camel-router</module>
+    <module>qpid-hello-world-test</module>
+    <module>xml-to-map-using-jaxb</module>
+  </modules>
+  <packaging>pom</packaging>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>7</source>
-                    <target>7</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>7</source>
+          <target>7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
