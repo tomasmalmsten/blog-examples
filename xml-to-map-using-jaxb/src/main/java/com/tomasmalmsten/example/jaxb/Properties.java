@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class PropertyMap {
+class Properties {
   @XmlElement(name = "property")
-  private List<PropertyEntry> entries = new ArrayList<>();
+  private List<Property> entries = new ArrayList<>();
 
-  List<PropertyEntry> entries() {
+  List<Property> entries() {
     return Collections.unmodifiableList(entries);
   }
 
-  void addEntry(PropertyEntry entry) {
+  void addEntry(Property entry) {
     entries.add(entry);
   }
 }
