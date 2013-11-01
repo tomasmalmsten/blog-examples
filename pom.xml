@@ -10,7 +10,6 @@
   <modules>
     <module>design-pattern-examples</module>
     <module>camel-router</module>
-    <module>qpid-hello-world-test</module>
     <module>xml-to-map-using-jaxb</module>
   </modules>
   <packaging>pom</packaging>
